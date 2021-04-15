@@ -18,6 +18,14 @@ LogToText::~LogToText()
 
 void LogToText::sendLog(std::string log)
 {
+
+	loadLogFile();
+	addToLog(log);
+	std::cout << log << "\n" << std::endl;
+}
+
+void LogToText::loadLogFile()
+{
 	if (logFile.is_open())
 	{
 		while (std::getline(logFile, oneLine))
@@ -28,8 +36,10 @@ void LogToText::sendLog(std::string log)
 		}
 	}
 	logFile.close();
+}
 
-	//adding another log
+void LogToText::addToLog(std::string log)
+{
 
 	std::ofstream logFileOut;
 	logFileOut.open(fileName);
@@ -40,8 +50,5 @@ void LogToText::sendLog(std::string log)
 	}
 
 	logFileOut << log << std::endl;
-
-
-	std::cout << log << "\n" << std::endl;
 }
 

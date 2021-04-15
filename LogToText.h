@@ -12,6 +12,8 @@ class LogToText
 	~LogToText();
 
 	void sendLog(std::string log);
+	void loadLogFile();
+	void addToLog(std::string log);
 
 	private:
 	std::string fileName;
