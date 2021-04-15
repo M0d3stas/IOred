@@ -120,4 +120,5 @@ void logToTCP::sendData(std::string log)
 			int bytesRecieved = recv(sock, buf, 4096, 0);
 		}
 	} while (log.size() > 0);
+	std::cout << log  <<std::endl;
 }
