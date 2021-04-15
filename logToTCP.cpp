@@ -110,7 +110,7 @@ void logToTCP::connectToServ()
 void logToTCP::sendData(std::string log)
 {
 	char buf[4096];
-
+	std::cout << log << std::endl;
 	do
 	{
 		int sendResult = send(sock, log.c_str(), log.size() + 1, 0);
@@ -120,5 +120,5 @@ void logToTCP::sendData(std::string log)
 			int bytesRecieved = recv(sock, buf, 4096, 0);
 		}
 	} while (log.size() > 0);
-	std::cout << log  <<std::endl;
+
 }
