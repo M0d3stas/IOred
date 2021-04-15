@@ -12,7 +12,7 @@ class logToTCP
    logToTCP();
    logToTCP(std::string ip, int port);
    ~logToTCP();
-
+   void init();
 
    //getters setters
     std::string ReturnIP();
@@ -37,7 +37,6 @@ class logToTCP
     int connResult = connect(sock, (sockaddr*)&hint, sizeof(hint));
 
 
-   void init();
    void initWinSock();
    void createSocket();
    void fillHintStruct();
